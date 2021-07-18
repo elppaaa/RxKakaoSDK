@@ -1,0 +1,52 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "f96b619bcb2383b43d898402283924b80e2c4bae",
+          "version": "5.4.3"
+        }
+      },
+      {
+        "package": "KakaoSDK",
+        "repositoryURL": "https://github.com/elppaaa/KakaoSDK",
+        "state": {
+          "branch": null,
+          "revision": "836cd50f6996238441251743f6d7708d6aeb4b52",
+          "version": "2.6.0"
+        }
+      },
+      {
+        "package": "OHHTTPStubs",
+        "repositoryURL": "https://github.com/AliSoftware/OHHTTPStubs.git",
+        "state": {
+          "branch": null,
+          "revision": "12f19662426d0434d6c330c6974d53e2eb10ecd9",
+          "version": "9.1.0"
+        }
+      },
+      {
+        "package": "RxAlamofire",
+        "repositoryURL": "https://github.com/RxSwiftCommunity/RxAlamofire",
+        "state": {
+          "branch": null,
+          "revision": "16858a7955ff8bc3caa51212fd7624f168586773",
+          "version": "5.7.1"
+        }
+      },
+      {
+        "package": "RxSwift",
+        "repositoryURL": "https://github.com/ReactiveX/RxSwift",
+        "state": {
+          "branch": null,
+          "revision": "254617dd7fae0c45319ba5fbea435bf4d0e15b5d",
+          "version": "5.1.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
