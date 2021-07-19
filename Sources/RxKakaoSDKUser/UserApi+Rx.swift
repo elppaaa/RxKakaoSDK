@@ -178,7 +178,8 @@ extension Reactive where Base: UserApi {
                     SdkLog.i("completable:\n success\n\n" )
                 }
             )
-            .ignoreElements()
+          .ignoreElements()
+          .asCompletable()
     }
     
     /// 현재 토큰의 기본적인 정보를 조회합니다. me()에서 제공되는 다양한 사용자 정보 없이 가볍게 토큰의 유효성을 체크하는 용도로 사용하는 경우 추천합니다.
@@ -198,6 +199,7 @@ extension Reactive where Base: UserApi {
         return AUTH.rx.responseData(.post, Urls.compose(path:Paths.userLogout))
             .compose(AUTH.rx.checkErrorAndRetryComposeTransformer())
             .ignoreElements()
+            .asCompletable()
             .do(onError: { (_) in
                 ///실패여부와 상관없이 토큰삭제.
                 AUTH.tokenManager.deleteToken()
@@ -212,6 +214,7 @@ extension Reactive where Base: UserApi {
         return AUTH.rx.responseData(.post, Urls.compose(path:Paths.userUnlink))
             .compose(AUTH.rx.checkErrorAndRetryComposeTransformer())
             .ignoreElements()
+            .asCompletable()
             .do(onCompleted: {
                 AUTH.tokenManager.deleteToken()
             })

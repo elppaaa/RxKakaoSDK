@@ -13,6 +13,7 @@
 //  limitations under the License.
 
 import Foundation
+import UIKit.UIImage
 import RxSwift
 import Alamofire
 import RxAlamofire
@@ -265,6 +266,7 @@ extension Reactive where Base: StoryApi {
                 }
             )
             .ignoreElements()
+            .asCompletable()
     }
 }
 

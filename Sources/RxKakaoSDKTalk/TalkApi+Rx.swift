@@ -72,6 +72,7 @@ extension Reactive where Base: TalkApi {
                 }
             )
             .ignoreElements()
+            .asCompletable()
     }
 
     /// 기본 템플릿을 이용하여, 카카오톡의 "나와의 채팅방"으로 메시지를 전송합니다.
@@ -85,6 +86,8 @@ extension Reactive where Base: TalkApi {
                 }
             )
             .ignoreElements()
+            .asCompletable()
+
     }
     
 //    public func defaultMemo(templateObject: [String:Any]) -> Completable {
@@ -103,6 +106,7 @@ extension Reactive where Base: TalkApi {
                 }
             )
             .ignoreElements()
+            .asCompletable()
     }
     
     

@@ -15,7 +15,7 @@
         "repositoryURL": "https://github.com/elppaaa/KakaoSDK",
         "state": {
           "branch": null,
-          "revision": "836cd50f6996238441251743f6d7708d6aeb4b52",
+          "revision": "4340e6c0afabffb3378f74f83cbba106f6635599",
           "version": "2.6.0"
         }
       },
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/RxSwiftCommunity/RxAlamofire",
         "state": {
           "branch": null,
-          "revision": "16858a7955ff8bc3caa51212fd7624f168586773",
-          "version": "5.7.1"
+          "revision": "9535b58695b91fb67f56d58d6fd0c76462d7743a",
+          "version": "6.1.2"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/ReactiveX/RxSwift",
         "state": {
           "branch": null,
-          "revision": "254617dd7fae0c45319ba5fbea435bf4d0e15b5d",
-          "version": "5.1.2"
+          "revision": "7c17a6ccca06b5c107cfa4284e634562ddaf5951",
+          "version": "6.2.0"
         }
       }
     ]
