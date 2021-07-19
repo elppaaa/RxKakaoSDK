@@ -14,6 +14,7 @@
 
 import Foundation
 import RxSwift
+import UIKit.UIImage
 
 import Alamofire
 import RxAlamofire
