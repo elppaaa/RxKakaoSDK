@@ -16,8 +16,8 @@ let package = Package(
     .library( name: "RxKakaoSDKUser", targets: ["RxKakaoSDKUser"]),
   ],
   dependencies: [
-    .package(name: "RxAlamofire", url: "https://github.com/RxSwiftCommunity/RxAlamofire", from: "6.0.0"),
-    .package(name: "RxSwift", url: "https://github.com/ReactiveX/RxSwift", from: "6.0.0"),
+    .package(name: "RxAlamofire", url: "https://github.com/RxSwiftCommunity/RxAlamofire", .upToNextMajor(from: "6.0.0")),
+    .package(name: "RxSwift", url: "https://github.com/ReactiveX/RxSwift", .upToNextMajor(from: "6.0.0")),
     .package(name: "KakaoSDK", url: "https://github.com/elppaaa/KakaoSDK", .upToNextMajor(from: "2.6.0"))
   ],
   targets: [
