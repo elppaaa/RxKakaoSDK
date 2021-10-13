@@ -87,7 +87,6 @@ extension Reactive where Base: TalkApi {
             )
             .ignoreElements()
             .asCompletable()
-
     }
     
 //    public func defaultMemo(templateObject: [String:Any]) -> Completable {

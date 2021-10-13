@@ -16,9 +16,9 @@ let package = Package(
     .library( name: "RxKakaoSDKUser", targets: ["RxKakaoSDKUser"]),
   ],
   dependencies: [
-    .package(name: "RxAlamofire", url: "https://github.com/RxSwiftCommunity/RxAlamofire", .upToNextMajor(from: "6.0.0")),
+    .package(name: "RxAlamofire", url: "https://github.com/RxSwiftCommunity/RxAlamofire", .exact("6.1.2")),
     .package(name: "RxSwift", url: "https://github.com/ReactiveX/RxSwift", .upToNextMajor(from: "6.0.0")),
-    .package(name: "KakaoSDK", url: "https://github.com/elppaaa/KakaoSDK", .upToNextMajor(from: "2.6.0"))
+    .package(name: "KakaoSDK", url: "https://github.com/elppaaa/KakaoSDK", .exact("2.8.1"))
   ],
   targets: [
     // Targets are the basic building blocks of a package. A target can define a module or a test suite.

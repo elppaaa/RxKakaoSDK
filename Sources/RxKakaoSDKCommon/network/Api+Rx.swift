@@ -127,16 +127,14 @@ extension Reactive where Base: Api {
                     SdkLog.i("upload progress: \(String(format:"%.2f", 100.0 * progress.fractionCompleted))%")
                 })
                 .responseData { (response) in
-                    if let afError = response.error {
-                        if let retryError = API.getRequestRetryFailedError(error:afError) {
-                            SdkLog.e("response:\n api error: \(retryError)")
-                            observer.onError(retryError)
-                        }
-                        else {
-                            //일반에러
-                            SdkLog.e("response:\n not api error: \(afError)")
-                            observer.onError(afError)
-                        }
+                    if let afError = response.error, let retryError = API.getRequestRetryFailedError(error:afError) {
+                        SdkLog.e("response:\n api error: \(retryError)")
+                        observer.onError(retryError)
+                    }
+                    else if let afError = response.error, API.getSdkError(error:afError) == nil {
+                        //일반에러
+                        SdkLog.e("response:\n not api error: \(afError)")
+                        observer.onError(afError)
                     }
                     else if let data = response.data, let response = response.response {
                         observer.onNext((response, data))
