@@ -13,7 +13,7 @@
 //  limitations under the License.
 
 import Foundation
-import UIKit.UIImage
+import UIKit
 import RxSwift
 import Alamofire
 import RxAlamofire

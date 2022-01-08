@@ -13,7 +13,7 @@
 //  limitations under the License.
 
 import Foundation
-import UIKit.UIImage
+import UIKit
 import RxSwift
 import Alamofire
 import RxAlamofire
@@ -39,7 +39,7 @@ extension Reactive where Base: Auth {
     public func checkRetryComposeTransformer() -> ComposeTransformer<(HTTPURLResponse, Data), (HTTPURLResponse, Data)> {
         return ComposeTransformer<(HTTPURLResponse, Data), (HTTPURLResponse, Data)> { (observable) in
             return observable
-              .retry(when: {(observableError) -> Observable<OAuthToken> in
+                .retry(when: {(observableError) -> Observable<OAuthToken> in
                     return observableError
                         .take(Auth.retryTokenRefreshCount)
                         .flatMap { (error) -> Observable<OAuthToken> in
@@ -60,7 +60,7 @@ extension Reactive where Base: Auth {
                                 
                                 if AUTH.tokenManager.getToken()?.refreshToken != nil {
                                     SdkLog.e("request token refresh. \n\n")
-                                    return AuthApi.shared.rx.refreshAccessToken().asObservable()
+                                    return AuthApi.shared.rx.refreshToken().asObservable()
                                 }
                                 else {
                                     SdkLog.e("\(logString)\n token is nil -> pass through next\n\n")

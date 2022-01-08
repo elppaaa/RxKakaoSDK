@@ -23,12 +23,12 @@ import KakaoSDKCommon
 ///     func application(_ application: UIApplication,
 ///                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 ///
-///         RxKakaoSDKCommon.initSDK(appKey: "<#Your App Key#>")
+///         RxKakaoSDK.initSDK(appKey: "<#Your App Key#>")
 ///
 ///         return true
 ///     }
 /// - important: SDK 초기화가 수행되지 않으면 SDK 내 모든 기능을 사용할 수 없습니다. 반드시 가장 먼저 실행되어야 합니다.
-final public class RxKakaoSDKCommon {
+final public class RxKakaoSDK {
     
     // MARK: Fields
     
@@ -39,6 +39,6 @@ final public class RxKakaoSDKCommon {
     ///   - loggingEnable: SDK에서 디버그 로깅를 사용 여부
     
     public static func initSDK(appKey: String, customScheme: String? = nil, loggingEnable: Bool = false, hosts: Hosts? = nil) {
-        KakaoSDKCommon.shared.initialize(appKey: appKey, customScheme: customScheme, loggingEnable: loggingEnable, hosts: hosts, sdkType:.RxSwift)
+        KakaoSDK.shared.initialize(appKey: appKey, customScheme: customScheme, loggingEnable: loggingEnable, hosts: hosts, sdkType:.RxSwift)
     }
 }

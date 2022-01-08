@@ -13,7 +13,7 @@
 //  limitations under the License.
 
 import Foundation
-import UIKit.UIImage
+import UIKit
 import RxSwift
 import Alamofire
 import RxAlamofire
@@ -46,7 +46,7 @@ extension Reactive where Base: LinkApi {
                                            "lcba":serverCallbackArgs?.toJsonString()
                         ].filterNil()
                     
-                    let linkParameters = ["appkey" : try! KakaoSDKCommon.shared.appKey(),
+                    let linkParameters = ["appkey" : try! KakaoSDK.shared.appKey(),
                                           "target_app_key" : targetAppKey,
                                           "appver" : Constants.appVersion(),
                                           "linkver" : "4.0",
@@ -82,9 +82,9 @@ extension Reactive where Base: LinkApi {
                                 Urls.compose(path:Paths.defalutLink),
                                 parameters: ["link_ver":"4.0",
                                              "template_object":templateObjectJsonString,
-                                             "target_app_key":try! KakaoSDKCommon.shared.appKey()]
+                                             "target_app_key":try! KakaoSDK.shared.appKey()]
                                     .filterNil(),
-                                headers: ["Authorization":"KakaoAK \(try! KakaoSDKCommon.shared.appKey())"],
+                                headers: ["Authorization":"KakaoAK \(try! KakaoSDK.shared.appKey())"],
                                 sessionType: .Api
             )
             .compose(API.rx.checkKApiErrorComposeTransformer())
@@ -121,9 +121,9 @@ extension Reactive where Base: LinkApi {
                                              "request_url":requestUrl,
                                              "template_id":templateId,
                                              "template_args":templateArgs?.toJsonString(),
-                                             "target_app_key":try! KakaoSDKCommon.shared.appKey()]
+                                             "target_app_key":try! KakaoSDK.shared.appKey()]
                                     .filterNil(),
-                                headers: ["Authorization":"KakaoAK \(try! KakaoSDKCommon.shared.appKey())"],
+                                headers: ["Authorization":"KakaoAK \(try! KakaoSDK.shared.appKey())"],
                                 sessionType: .Api
             )
             .compose(API.rx.checkKApiErrorComposeTransformer())
@@ -147,9 +147,9 @@ extension Reactive where Base: LinkApi {
                                 parameters: ["link_ver":"4.0",
                                              "template_id":templateId,
                                              "template_args":templateArgs?.toJsonString(),
-                                             "target_app_key":try! KakaoSDKCommon.shared.appKey()]
+                                             "target_app_key":try! KakaoSDK.shared.appKey()]
                                     .filterNil(),
-                                headers: ["Authorization":"KakaoAK \(try! KakaoSDKCommon.shared.appKey())"],
+                                headers: ["Authorization":"KakaoAK \(try! KakaoSDK.shared.appKey())"],
                                 sessionType: .Api
             )
             .compose(API.rx.checkKApiErrorComposeTransformer())
@@ -172,7 +172,7 @@ extension Reactive where Base: LinkApi {
         return API.rx.upload(.post, Urls.compose(path:Paths.imageUploadLink),
                           images: [image],
                           parameters: ["secure_resource": secureResource],
-                          headers: ["Authorization":"KakaoAK \(try! KakaoSDKCommon.shared.appKey())"],
+                          headers: ["Authorization":"KakaoAK \(try! KakaoSDK.shared.appKey())"],
                           sessionType: .Api)
             .compose(API.rx.checkKApiErrorComposeTransformer())
             .map({ (response, data) -> (SdkJSONDecoder, HTTPURLResponse, Data) in
@@ -186,7 +186,7 @@ extension Reactive where Base: LinkApi {
     public func imageScrap(imageUrl: URL, secureResource: Bool = true) -> Single<ImageUploadResult> {
         return API.rx.responseData(.post, Urls.compose(path:Paths.imageScrapLink),
                                 parameters: ["image_url": imageUrl.absoluteString, "secure_resource": secureResource],
-                                headers: ["Authorization":"KakaoAK \(try! KakaoSDKCommon.shared.appKey())"],
+                                headers: ["Authorization":"KakaoAK \(try! KakaoSDK.shared.appKey())"],
                                 sessionType: .Api)
             .compose(API.rx.checkKApiErrorComposeTransformer())
             .map({ (response, data) -> (SdkJSONDecoder, HTTPURLResponse, Data) in
